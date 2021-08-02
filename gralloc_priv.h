@@ -18,16 +18,16 @@
 #ifndef GRALLOC_PRIV_H_
 #define GRALLOC_PRIV_H_
 
+#include <cutils/native_handle.h>
+
+#include <sys/cdefs.h>
 #include <stdint.h>
 #include <limits.h>
-#include <sys/cdefs.h>
-#include <hardware/gralloc.h>
 #include <pthread.h>
 #include <errno.h>
 #include <unistd.h>
 
 #include <cutils/native_handle.h>
-#include <android/log.h>
 
 #ifndef GRALLOC_USAGE_TILED_VIV
 #  define GRALLOC_USAGE_TILED_VIV       0x10000000
@@ -35,6 +35,12 @@
 #ifndef GRALLOC_USAGE_TS_VIV
 #  define GRALLOC_USAGE_TS_VIV          0x20000000
 #endif
+#ifndef GRALLOC_USAGE_CLEAR_VIV
+#  define GRALLOC_USAGE_CLEAR_VIV       0x80000000
+#endif
+
+#define DRV_MAX_PLANES                  4
+#define BUFFER_NAME_MAX_SIZE            64
 
 struct private_handle_t {
     native_handle_t nativeHandle;
