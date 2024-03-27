@@ -14,7 +14,7 @@ It includes only the public header files (the gralloc itself is provided in bina
 ## Documentation ##
 
 * The [release notes][] provide information on the release.
-[release notes]: https://wiki.st.com/stm32mpu/wiki/STM32_MPU_OpenSTDroid_release_note_-_v5.1.0
+[release notes]: https://wiki.st.com/stm32mpu-ecosystem-v5/wiki/STM32_MPU_OpenSTDroid_release_note_-_v5.1.0
 
 ## Dependencies ##
 
