@@ -1,28 +1,35 @@
 # hardware-allocator #
 
-This module contains the STMicroelectronics Allocator HAL public header files useful for composer.
+This module contains the STMicroelectronics android.hardware.graphics.allocator
+and the mapper stable-c source code.
 
 It is part of the STMicroelectronics delivery for Android.
 
 ## Description ##
 
-This module version is the updated version for STM32MPU distribution for Android
+This module provides the STM32MPU-specific implementation for Android graphics allocator and mapper.
 Please see the Android delivery release notes for more details.
-
-It includes only the public header files (the gralloc itself is provided in binary).
 
 ## Documentation ##
 
 * The [release notes][] provide information on the release.
-[release notes]: https://wiki.st.com/stm32mpu-ecosystem-v5/wiki/STM32_MPU_OpenSTDroid_release_note_-_v5.1.0
+[release notes]: https://wiki.st.com/stm32mpu/wiki/STM32_MPU_OpenSTDroid_release_note_-_v6.2.0
 
 ## Dependencies ##
 
 This module can't be used alone. It is part of the STMicroelectronics delivery for Android.
 
-## Containing ##
+```
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator-service.stm \
+    android.hardware.graphics.allocator-aidl-impl \
+    mapper.stm
+```
 
-This directory contains the public header files associated to the gralloc.stm library.
+## Contents ##
+
+This directory contains the implementation of android.hardware.graphics.allocator AIDL version 2 and
+android.hardware.graphics.mapper (stable-c interface).
 
 ## License ##
 

@@ -1,0 +1,54 @@
+//#############################################################################
+//
+//    Copyright (c) 2005 - 2022 by Vivante Corp.  All rights reserved.
+//
+//    The material in this file is confidential and contains trade secrets
+//    of Vivante Corporation. This is proprietary information owned by
+//    Vivante Corporation. No part of this work may be disclosed,
+//    reproduced, copied, transmitted, or used in any way for any purpose,
+//    without the express written permission of Vivante Corporation.
+//
+//#############################################################################
+
+cc_defaults {
+    name: "gralloc_vivante_defaults",
+
+    header_libs: [
+        "libhardware_headers",
+        "libnativebase_headers",
+        "libsystem_headers",
+        "libbase_headers",
+        "liblog_headers",
+        "libimapper_stablec",
+        "libimapper_providerutils",
+    ],
+    include_dirs: [
+        "device/stm/stm32mp2/hardware/allocator",
+    ],
+    shared_libs: [
+        "libhardware",
+        "libhidlbase",
+        "libgralloctypes",
+        "liblog",
+        "libcutils",
+        "libdl",
+        "libvndksupport",
+        "libui",
+        "libdrm",
+        "libutils",
+        "libsync",
+        "libbase",
+    ],
+    cflags: [
+        "-DDRM_GRALLOC=1",
+        "-DgcdENABLE_3D=1",
+        "-DgcdENABLE_RENDER_INTO_WINDOW=1",
+        "-DLOG_TAG=\"gralloc-stm\"",
+        //"-DLOG_NDEBUG=0",
+    ],
+    product_variables: {
+        platform_sdk_version: {
+            cflags: ["-DANDROID_SDK_VERSION=%d"],
+        },
+    },
+}
